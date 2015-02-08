@@ -1,0 +1,4 @@
+﻿(function IIFE() {
+    "use strict";
+
+})();
