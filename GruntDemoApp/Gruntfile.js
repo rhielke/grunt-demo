@@ -119,9 +119,27 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-watch");
 
-    // this would be run by typing "grunt test" on the command line
+    // kick off all linting tasks by invoking the linting task
+    grunt.registerTask("linting", "Multi task used to execute all 'linting' tasks (e.g., JavaScript, HTML, etc.)", function () {
+        grunt.task.run([
+            "jshint",
+            "bootlint"
+        ]);
+    });
+
+    // this would be run by typing "grunt build" on the command line
+    grunt.registerTask("build", [
+        "linting",
+        "clean:css",
+        "less:development",
+        "copy:staticContent",
+        "clean:js",
+        "uglify:development"
+    ]);
+
+    // this would be run by typing "grunt build" on the command line
     // the array should contains the names of the tasks to run
-    grunt.registerTask("build", ["jshint", "bootlint", "clean:css", "less:development", "copy:staticContent", "clean:js", "uglify:development"]);
+    //grunt.registerTask("build", ["jshint", "bootlint", "clean:css", "less:development", "copy:staticContent", "clean:js", "uglify:development"]);
 
     // define the default task that can be run just by typing "grunt" on the command line
     // the array should contains the names of the tasks to run
