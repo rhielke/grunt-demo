@@ -71,7 +71,8 @@ module.exports = function (grunt) {
                         "my/*.less",
 
                         // vendor LESS
-                        "bootstrap/bootstrap.less"
+                        "bootstrap/bootstrap.less",
+                        "bootstrap/theme.less"
                     ],
                     // Destination file names will have this extension.
                     ext: ".min.css",

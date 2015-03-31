@@ -23,6 +23,7 @@ namespace GruntDemoApp
             
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content-Build/bootstrap/bootstrap.min.css",
+                      "~/Content-Build/bootstrap/theme.min.css",
                       "~/Content-Build/my/site.min.css"));
         }
     }
