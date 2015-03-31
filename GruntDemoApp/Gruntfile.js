@@ -1,4 +1,4 @@
-﻿/// <vs BeforeBuild='build' />
+/// <vs BeforeBuild='build' />
 /*global module*/
 module.exports = function (grunt) {
     "use strict";
